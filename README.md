@@ -1,7 +1,7 @@
 # react-native-mongodb-mobile-app
 
 
-## A react-native app </br>
+A react-native app
 &nbsp;&nbsp;frontend: redux, axios </br>
 &nbsp;&nbsp;backend: express, mongoose, mongoDB-atlas </br>
 
@@ -27,7 +27,7 @@ open two terminals, one in my-app dir, one in backend dir: </br>
 ---
 
 ## Trouble Shooting
-prerequisite: </br>
+prerequisites: </br>
 &nbsp;&nbsp;nodejs installed </br>
 &nbsp;&nbsp;expo cli installed </br>
 &nbsp;&nbsp;to install packages:
