@@ -1,22 +1,24 @@
 # react-native-mongodb-mobile-app
 
-<p>
-A react-native app </br>
+
+## A react-native app </br>
   frontend: redux, axios </br>
   backend: express, mongoose, mongoDB-atlas </br>
-</p>
+
 ---
 
-To Run: </br>
+## To Run:
   you need link your mongodb Atlas cluster to this app: </br>
     get the connection link of your cluster </br>
     paste it in /my-app/backend/.env after the variable name </br>
     make sure type in your password </br>
 
-  cd my-app </br>
-  npm install </br>
-  cd backend </br>
-  npm install </br>
+```
+  cd my-app
+  npm install
+  cd backend
+  npm install
+```
 
   open two terminals, one in my-app dir, one in backend dir: </br>
     in backend dir: </br>
@@ -26,7 +28,7 @@ To Run: </br>
 
 ---
 
-Trouble Shooting </br>
+## Trouble Shooting </br>
   prerequisite: </br>
     nodejs installed </br>
     expo cli installed </br>
@@ -48,4 +50,6 @@ Trouble Shooting </br>
 
 ---
 
-Lisence: MIT </br>
+## Lisence
+
+MIT
