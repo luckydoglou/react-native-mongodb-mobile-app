@@ -1,10 +1,10 @@
 # react-native-mongodb-mobile-app
 
-
+<p>
 A react-native app </br>
-&nbsp;frontend: redux, axios </br>
-&nbsp;backend: express, mongoose, mongoDB-atlas </br>
-
+  frontend: redux, axios </br>
+  backend: express, mongoose, mongoDB-atlas </br>
+</p>
 ---
 
 To Run: </br>
