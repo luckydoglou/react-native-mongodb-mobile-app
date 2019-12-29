@@ -1,10 +1,9 @@
 # react-native-mongodb-mobile-app
 
-<pre>
 
 A react-native app </br>
-  frontend: redux, axios </br>
-  backend: express, mongoose, mongoDB-atlas </br>
+&nbsp;frontend: redux, axios </br>
+&nbsp;backend: express, mongoose, mongoDB-atlas </br>
 
 ---
 
@@ -50,5 +49,3 @@ Trouble Shooting </br>
 ---
 
 Lisence: MIT </br>
-
-</pre>
