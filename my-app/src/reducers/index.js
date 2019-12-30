@@ -1,11 +1,14 @@
 import { combineReducers } from 'redux';
 
 import tempReducer from './tempReducer';
+import loginReducer from './tempReducer';
+
 
 export default combineReducers({
 
-  // all individual reduers go here
+  // all reduers go here
   // don't forget to import them as well
-  tempReducer
+  tempReducer,
+  loginReducer,
 
 });
