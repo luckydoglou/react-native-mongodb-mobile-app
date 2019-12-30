@@ -1,7 +1,7 @@
 # react-native-mongodb-mobile-app
 
 
-A react-native app
+Currently implemented login and signup screens </br>
 &nbsp;&nbsp;frontend: redux, axios </br>
 &nbsp;&nbsp;backend: express, mongoose, mongoDB-atlas </br>
 

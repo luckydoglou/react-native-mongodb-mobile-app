@@ -29,10 +29,10 @@ function SignupScreen(props) {
     //  send signup request through http protcol
     axios.post(signupUri, user)
       .then(res => {
-
         console.log(`frontend: ${res.data}`);
 
-        // notify user if sign up success
+        // go back to login screen
+        props.navigation.navigate('Login');
 
       });
   };
