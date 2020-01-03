@@ -1,13 +1,10 @@
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
-
-import * as React from 'react';
-import { MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
-
+import React from 'react';
 import HomeScreen from '../screens/homeScreen';
 import DiscoverScreen from '../screens/discoverScreen';
-\import ProfileScreen from '../screens/profileScreen';
+import ProfileScreen from '../screens/profileScreen';
 import SignupScreen from '../screens/signupScreen';
 import LoginScreen from '../screens/loginScreen';
 

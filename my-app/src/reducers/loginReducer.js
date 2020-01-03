@@ -1,26 +1,41 @@
+import {
+  LOGIN_REQUEST,
+  LOGIN_SUCCESS,
+  LOGIN_FAILURE,
+} from '../actions/loginActions';
+
+// init state for login
 const initialState = {
-    username: "",
-    password: ""
+  isLoading: false,
+  isAuth: false,
+  loginData: {},
+  errMsg: "",
 }
 
-const getUsername = 'getUsername';
-const getPassword = 'getPassword';
-
-export default function reducer(state = initialState, action) {
-    switch (action.type) {
-        case getUsername:
-            return { ...state, username: action.payload }
-        case getPassword:
-            return { ...state, password: action.payload }
-        default:
-            return state;
-    }
+function loginReducer(state = initialState, action) {
+  switch (action.type) {
+    case LOGIN_REQUEST:
+      return {
+        ...state,
+        isLoading: false,
+      }
+    case LOGIN_SUCCESS:
+      return {
+        isLoading: false,
+        isAuth: true,
+        loginData: action.payload,
+        errMsg: "",
+      }
+    case LOGIN_FAILURE:
+      return {
+        isLoading: false,
+        isAuth: false,
+        loginData: {},
+        errMsg: action.payload,
+      }
+    default:
+      return state;
+  }
 }
 
-export function setUsername(username) {
-    return { type: getUsername, payload: username };
-}
-
-export function setPassword(password) {
-    return { type: getPassword, payload: password }
-}
+export default loginReducer;

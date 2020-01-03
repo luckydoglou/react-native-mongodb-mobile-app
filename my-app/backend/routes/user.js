@@ -8,7 +8,7 @@ router.route('/').get((req, res) => {
     .catch(err => res.status(400).json("Error: " + err));
 });
 
-// add new user
+// signup a new user
 router.route('/signup').post((req, res) => {
   const username = req.body.username;
   const firstname = req.body.firstname;
@@ -24,11 +24,14 @@ router.route('/signup').post((req, res) => {
   });
 
   newUser.save()
-    .then(() => res.json("User Added!"))
+    .then(() => {
+      console.log("User Added!");
+      res.status(200).json("User Added!")
+    })
     .catch(err => res.status(400).json("Error: " + err));
 });
 
-// find a user
+// login an user
 router.route('/login').post((req, res) => {
   User.find({
     username: req.body.username,
@@ -36,11 +39,11 @@ router.route('/login').post((req, res) => {
   })
     .then(users => {
       if (users.length !== 0) {
-        res.json("User Found!");
-        console.log(`Backend login user: ${users}`);
+        res.status(200).json("User Found!");
+        console.log("User Found");
       } else {
-        res.json("User Not Found")
-        console.log(`Backend login user: Not Found`);
+        res.status(204).json("User Not Found");
+        console.log("User Not Found");
       }
     })
     .catch(err => res.status(400).json("Error: " + err));
