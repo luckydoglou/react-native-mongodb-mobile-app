@@ -1,7 +1,9 @@
+import React from 'react';
+import { MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
-import React from 'react';
+
 import HomeScreen from '../screens/homeScreen';
 import DiscoverScreen from '../screens/discoverScreen';
 import ProfileScreen from '../screens/profileScreen';

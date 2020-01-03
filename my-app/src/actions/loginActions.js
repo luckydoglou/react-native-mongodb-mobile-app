@@ -6,7 +6,7 @@ export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAILURE = 'LOGIN_FAILURE';
 
 // action creators
-export const loginRequest = loginData => {
+export const loginRequest = () => {
   return {
     type: LOGIN_REQUEST,
   }
@@ -26,16 +26,17 @@ export const loginFailure = errMsg => {
 
 // async impure action creator enabled by redux-thunk
 export const login = loginData => {
-  return async dispatch => {
-    dispatch(loginRequest(loginData));
+  return dispatch => {
+    dispatch(loginRequest());
     const loginUri = 'http://localhost:5000/user/login';
-    await axios.post(loginUri, loginData)
+    axios.post(loginUri, loginData)
       .then(res => {
+        console.log("Status: ", res.status);
+        console.log(res.data);
         if (res.status === 200) {
-          console.log("Status: ", res.status);
-          console.log(res.data);
-          dispatch(loginSuccess());
-        } else {
+          dispatch(loginSuccess(loginData));
+        }
+        else {
           dispatch(loginFailure("User Not Found!"));
         }
       })

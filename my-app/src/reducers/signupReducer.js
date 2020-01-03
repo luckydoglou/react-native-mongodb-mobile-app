@@ -12,6 +12,7 @@ const initState = {
   errMsg: "",
 }
 
+// the sign up reducer
 const signupReducer = (state = initState, action) => {
   switch (action.type) {
     case SIGNUP_REQUEST:
@@ -22,7 +23,7 @@ const signupReducer = (state = initState, action) => {
     case SIGNUP_SUCCESS:
       return {
         isLoading: false,
-        isAuth: false,
+        isAuth: true,
         signupData: action.payload,
         errMsg: "",
       }
@@ -31,7 +32,7 @@ const signupReducer = (state = initState, action) => {
         isLoading: false,
         isAuth: false,
         signupData: {},
-        errMsg: "",
+        errMsg: action.payload,
       }
     default:
       return state;

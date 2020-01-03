@@ -1,3 +1,4 @@
+// import {Alert} from 'react-native';
 import {
   LOGIN_REQUEST,
   LOGIN_SUCCESS,
@@ -5,24 +6,24 @@ import {
 } from '../actions/loginActions';
 
 // init state for login
-const initialState = {
+const initState = {
   isLoading: false,
   isAuth: false,
   loginData: {},
   errMsg: "",
 }
 
-function loginReducer(state = initialState, action) {
+const loginReducer = (state = initState, action) => {
   switch (action.type) {
     case LOGIN_REQUEST:
       return {
         ...state,
-        isLoading: false,
+        isLoading: true,
       }
     case LOGIN_SUCCESS:
       return {
-        isLoading: false,
         isAuth: true,
+        isLoading: false,
         loginData: action.payload,
         errMsg: "",
       }

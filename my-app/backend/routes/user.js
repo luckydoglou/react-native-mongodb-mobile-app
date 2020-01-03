@@ -26,7 +26,7 @@ router.route('/signup').post((req, res) => {
   newUser.save()
     .then(() => {
       console.log("User Added!");
-      res.status(200).json("User Added!")
+      res.status(200).json("User Added!");
     })
     .catch(err => res.status(400).json("Error: " + err));
 });
