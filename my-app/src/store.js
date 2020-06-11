@@ -3,9 +3,8 @@ import thunk from 'redux-thunk';
 import { persistStore, persistReducer } from 'redux-persist';
 import AsyncStorage from '@react-native-community/async-storage';
 
-import loginReducer from './screens/loginStack/reducers/loginReducer';
-import signupReducer from './screens/signupStack/reducers/signupReducer';
-import createEventReducer from './screens/createEventStack/reducers/createEventReducer';
+import loginReducer from './reducers/loginReducer';
+import signupReducer from './reducers/signupReducer';
 
 // rootRecuder is now being put in this file (Store.js) 
 rootReducer = combineReducers({
@@ -13,7 +12,6 @@ rootReducer = combineReducers({
   // don't forget to import them as well
   loginReducer: loginReducer,
   signupReducer: signupReducer,
-  createEventReducer: createEventReducer,
 
 });
 
@@ -24,7 +22,6 @@ const persistConfig = {
   // things you want to persist
   whitelist: [
     'loginReducer',
-    'createEventReducer',
     'signupReducer',
   ],
   // things you don't want to persist

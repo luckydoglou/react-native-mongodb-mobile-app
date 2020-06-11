@@ -10,12 +10,11 @@ import { createBottomTabNavigator } from 'react-navigation-tabs';
 
 import HomeScreen from '../screens/homeStack/homeScreen';
 import DiscoverScreen from '../screens/discoverStack/discoverScreen';
-import CreateEventScreen from '../screens/createEventStack/createEventScreen';
 import MessageScreen from '../screens/messageStack/messageScreen';
 import ProfileScreen from '../screens/profileStack/profileScreen';
 import SignupScreen from '../screens/signupStack/signupScreen';
 import LoginScreen from '../screens/loginStack/loginScreen';
-import splashScreen from '../screens/splashScreenStack/splashScreen';
+import splashScreen from '../screens/splashScreen/splashScreen';
 
 const AppNavigator = createBottomTabNavigator(
   {
@@ -30,9 +29,6 @@ const AppNavigator = createBottomTabNavigator(
     },
     Discover: {
       screen: DiscoverScreen,
-    },
-    Create: {
-      screen: CreateEventScreen,
     },
     Message: {
       screen: MessageScreen,
@@ -104,18 +100,6 @@ export default createAppContainer(createSwitchNavigator(
 //         },
 //         tabBarIcon: ({tintColor, activeTintColor}) => (
 //           <MaterialIcons name="search" size={30} color={tintColor} />
-//           )
-//       }
-//     },
-//     Create:{
-//       screen: CreateEventScreen,
-//       navigationOptions: {
-//         tabBarLabel: 'Create',
-//         tabBarOptions: {
-//           activeTintColor: "teal",
-//         },
-//         tabBarIcon: ({tintColor, activeTintColor}) => (
-//           <MaterialIcons name="add" size={30} color={tintColor} />
 //           )
 //       }
 //     },

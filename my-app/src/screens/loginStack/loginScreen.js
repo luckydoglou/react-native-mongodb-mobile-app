@@ -3,8 +3,8 @@ import { Text, View, TextInput, StyleSheet, Button, Alert, ShadowPropTypesIOS } 
 import { connect } from 'react-redux';
 // import PropTypes from 'prop-types';
 //import axios from 'axios';
-import styles from './styles/temp';
-import { login } from './actions/loginActions';
+import styles from '../../styles/temp';
+import { login } from '../../actions/loginActions';
 
 function LoginScreen(props) {
   const [username, putUsername] = useState("");

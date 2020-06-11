@@ -3,8 +3,8 @@ import { StyleSheet, Text, View, Button, TextInput, Alert } from 'react-native';
 import { connect } from 'react-redux';
 //import axios from 'axios';
 
-import styles from './styles/temp';
-import { signup } from './actions/signupActions';
+import styles from '../../styles/temp';
+import { signup } from '../../actions/signupActions';
 
 function SignupScreen(props) {
   // initialize states
