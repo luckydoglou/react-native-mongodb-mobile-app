@@ -4,8 +4,8 @@ Implemented: </br>
 front: user auth, redux, redux-persist </br>
 back: express, mongoose, JWT </br>
 TODO: </br>
-front: message screen design, integration testing
-back: message model
+front: message screen design, integration testing </br>
+back: message model </br>
 
 ---
 ## To Run:
@@ -20,8 +20,8 @@ back: message model
   npm start
 ```
 Link your mongodb Atlas cluster: </br>
-&nbsp;&nbsp;get your cluster connection link from Atlas </br>
-&nbsp;&nbsp;put it in my-app/backend/.env </br>
+get your cluster connection link from Atlas </br>
+put it in my-app/backend/.env </br>
 
 ---
 ## Trouble Shooting
