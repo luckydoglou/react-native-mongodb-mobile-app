@@ -3,6 +3,7 @@ import {
   LOGIN_REQUEST,
   LOGIN_SUCCESS,
   LOGIN_FAILURE,
+  SET_AUTH_TOKEN,
 } from '../actions/loginActions';
 
 // init state for login
@@ -11,6 +12,7 @@ const initState = {
   isAuth: false,
   loginData: {},
   errMsg: "",
+  authToken: ""
 }
 
 const loginReducer = (state = initState, action) => {
@@ -33,6 +35,11 @@ const loginReducer = (state = initState, action) => {
         isAuth: false,
         loginData: {},
         errMsg: action.payload,
+      }
+    case SET_AUTH_TOKEN:
+      return {
+        ...state,
+        authToken: action.payload,
       }
     default:
       return state;

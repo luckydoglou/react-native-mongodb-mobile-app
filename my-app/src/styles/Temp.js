@@ -1,9 +1,7 @@
-import { Colors } from 'react-native/Libraries/NewAppScreen';
+//import { Colors } from 'react-native/Libraries/NewAppScreen';
 'use strict';
+import { StyleSheet } from 'react-native';
 
-var React = require('react-native');
-
-var { StyleSheet } = React;
 const styles = StyleSheet.create({
   container: {
     flex: 1,

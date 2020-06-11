@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Text, View, TextInput, StyleSheet, Button, Alert } from 'react-native';
+import { Text, View, TextInput, StyleSheet, Button, Alert, ShadowPropTypesIOS } from 'react-native';
 import { connect } from 'react-redux';
-import axios from 'axios';
-import styles from '../styles/Temp';
-import { login } from '../actions/loginActions';
+// import PropTypes from 'prop-types';
+//import axios from 'axios';
+import styles from './styles/temp';
+import { login } from './actions/loginActions';
 
 function LoginScreen(props) {
   const [username, putUsername] = useState("");
@@ -15,14 +16,14 @@ function LoginScreen(props) {
   // useEffect()to check if states have changed
   // 2nd argument is the list of states you want to watch for
   useEffect(() => {
-    console.log("props.isAuth: ", props.isAuth);
-    console.log("props.isLoading: ", props.isLoading);
+    console.log("loginScreen.js, props.isAuth: ", props.isAuth);
+    console.log("loginScreen.js, props.isLoading: ", props.isLoading);
     if (didMountRef.current) {
       // if login success, go to home screen
       if (props.isAuth) {
         props.navigation.navigate('App');
       } else if (!props.isAuth && !props.isLoading) {
-        Alert.alert("Username or Password Not Match");
+        Alert.alert(props.errMsg);
       }
     } else {
       didMountRef.current = true;
@@ -42,19 +43,26 @@ function LoginScreen(props) {
   return (
     <View style={styles.container}>
       <Text style={styles.titleText}>Login</Text>
-      <TextInput style={styles.TextInput} id='username' placeholder='User Name' onChangeText={text => putUsername(text)} />
-      <TextInput style={styles.TextInput} id='password' placeholder='Password' secureTextEntry={true} onChangeText={text => putPassword(text)} />
+      <TextInput style={styles.TextInput} id='username' placeholder='Username' onChangeText={text => putUsername(text)} autoCapitalize='none' />
+      <TextInput style={styles.TextInput} id='password' placeholder='Password' secureTextEntry={true} onChangeText={text => putPassword(text)} autoCapitalize='none' />
       <Button title="Log In" onPress={loginHandler} />
       <Button title="Sign Up" onPress={() => { props.navigation.navigate('Signup') }} />
     </View>
   );
 };
 
+// constrain input data types, not used for now
+// LoginScreen.propTypes = {
+//   login: PropTypes.func.isRequired,
+//   authenticated: PropTypes.bool
+// };
+
 const mapStateToProps = state => {
   return {
     // only map needed states here
     isLoading: state.loginReducer.isLoading,
     isAuth: state.loginReducer.isAuth,
+    errMsg: state.loginReducer.errMsg,
   }
 }
 const mapDispatchToProps = dispatch => {

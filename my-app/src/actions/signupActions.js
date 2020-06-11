@@ -28,19 +28,16 @@ export const signupFailure = errMsg => {
 export const signup = signupData => {
   return async dispatch => {
     dispatch(signupRequest());
-    const signupUri = 'http://localhost:5000/user/signup';
+    const signupUri = 'http://localhost:5000/auth/signup';
     await axios.post(signupUri, signupData)
       .then(res => {
         console.log("Status: ", res.status);
         console.log(res.data);
-        if (res.status === 200) {
-          dispatch(signupSuccess(signupData));
-        } else {
-          dispatch(signupFailure("Unable to Sign Up"));
-        }
+        dispatch(signupSuccess(signupData));
       })
       .catch(err => {
-        console.log("Signup Request Error: ", err.message);
+        console.log("signupActions.js, Signup Request Error: ", err.message);
+        dispatch(signupFailure("Fail to Sign Up"));
       });
   }
 }

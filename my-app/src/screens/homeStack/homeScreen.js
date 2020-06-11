@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 
-import DetailScreen from './detailsScreen';
+import DetailScreen from '../detailsScreen';
 
 function HomeScreen(props) {
   return (
