@@ -9,7 +9,7 @@ back: message model </br>
 
 ---
 ## Demo
-
+![Event App Demo](demo.gif)
 
 ---
 ## To Run:
